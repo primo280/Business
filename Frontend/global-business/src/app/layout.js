@@ -9,14 +9,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" 
-          rel="stylesheet" 
+        {/* Ajoutez vos polices personnalisées ici */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
         />
       </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
