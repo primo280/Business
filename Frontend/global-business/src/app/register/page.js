@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Updated import for Next.js 13+
 import { FaUser, FaEnvelope, FaLock, FaPhone } from "react-icons/fa";
+import Image from "next/image"; // Import du composant Image de Next.js
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -82,7 +83,13 @@ export default function Register() {
           <div className="mb-4 flex items-center border rounded p-2">
             <FaPhone className="text-gray-500 mr-2" />
             <div className="flex items-center">
-              <img src={countryCodes.find(c => c.code === phoneCode)?.flag} alt="flag" className="w-6 h-4 mr-2" />
+              <Image
+                src={countryCodes.find(c => c.code === phoneCode)?.flag}
+                alt="flag"
+                width={24} // Largeur de l'image
+                height={16} // Hauteur de l'image
+                className="mr-2"
+              />
               <select
                 value={phoneCode}
                 onChange={(e) => setPhoneCode(e.target.value)}
@@ -105,7 +112,7 @@ export default function Register() {
             />
           </div>
           <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded w-full">
-            S'inscrire
+            S&apos;inscrire
           </button>
         </form>
       </main>
